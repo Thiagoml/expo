@@ -77,3 +77,59 @@ void main() {
   aluno2.exibirMediaFormatada();
 
 }
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+class Livro {
+  String autor;
+  String titulo;
+  String editora;
+  double precoCusto;
+  double precoVenda;
+  double lucro;
+  int ano;
+  int edicao;
+
+
+Livro(this.autor, this.titulo, this.editora, this.precoCusto, this.precoVenda, this.lucro, this.ano, this.edicao);
+
+  void imprimirInfo(){
+    print("autor: $autor");
+    print("titulo: $titulo");
+    print("editora: $editora");
+    print("preço de custo: ${precoCusto.toStringAsFixed(2)}");
+    print("preço de venda: ${precoVenda.toStringAsFixed(2)}");
+    print("lucro: ${lucro.toStringAsFixed(0)}%");
+    print("ano: $ano");
+    print("edicão: $edicao");
+  } 
+  
+  void imprimirAutorTitulo(){
+    print("autor: $autor");
+    print("titulo: $titulo");
+  }
+  
+  void calcularPrecoVenda(double lucro){
+    this.lucro=lucro;
+    precoVenda = precoCusto + precoCusto*(lucro/100);
+  }
+  
+  double imprimirPrecoVenda(){
+   return (precoVenda); 
+  }
+}
+
+void main() {
+  Livro livro1 = Livro("Int. Flutter","Maria","TI",50,75,50,2023,2);
+  livro1.imprimirInfo();
+  print("--------------");
+  livro1.imprimirAutorTitulo();
+  print("--------------");
+  livro1.calcularPrecoVenda(75);
+  print (livro1.imprimirPrecoVenda());
+}
+
+

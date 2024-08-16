@@ -1,0 +1,81 @@
+import {
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+
+import React, { useState } from 'react';
+
+export default function App() {
+  const [altura, setAltura] = useState();
+  const [peso, setPeso] = useState();
+  const [r, setR] = useState(0);
+
+  imc = () => {
+    a = parseFloat(altura);
+    p = parseFloat(peso);
+    s = b / (a^2);
+
+    if (imc<18,5){
+      setR=(s),"Peso Baixo"
+    } else if(imc>18,5 && imc<24,9){
+      setR=(s),"Peso Normal"
+    } else if(imc>18,5){
+      setR=(s),"Acima do Peso"
+    }
+
+
+
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text> Calculadora de IMC(Indice de Massa Corporal) </Text>
+      <TextInput
+        style={{ margin: 10, borderRadius: 2, borderWidth: 1, width: 200 }}
+        value={altura}
+        keyboardType="numeric"
+        placeholderTextColor="gray"
+        placeholder="Entre com sua altura"
+        onChangeText={setAltura}
+      />
+
+      <TextInput
+        style={{ borderRadius: 2, borderWidth: 1, width: 200 }}
+        value={peso}
+        placeholderTextColor="gray"
+        keyboardType="numeric"
+        placeholder="Entre com seu peso"
+        onChangeText={setPeso}
+      />
+
+      <View style={{ flexDirection: 'row' }}>
+        <TouchableOpacity
+          onPress={() => imc()}
+          style={{
+            borderWidth: 2,
+            width: 70,
+            margin: 10,
+            borderRadius: 5,
+            backgroundColor: 'gray',
+          }}>
+          <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>Calcular </Text>
+        </TouchableOpacity>
+
+      </View>
+      <Text>Seu IMC é: {r} </Text>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+    alignItems: 'center',
+    padding: 8,
+  },
+});

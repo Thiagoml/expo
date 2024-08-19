@@ -1,0 +1,52 @@
+class CalcSalarioRec{ 
+  late double salario,faltas,h, salarioRec; 
+  
+  void setSalario(double v){
+    salario = v;
+  }
+  double getSalario(){
+    return salario;  
+  }
+  
+  void valorH(){
+    h = salario/240;
+  }
+  
+  double getH(){
+    return h;
+  }
+  
+  void setFaltas(double v){
+    faltas = v;
+  }
+  
+  double getFaltas(){
+    return faltas;  
+  }
+  
+  void desconto(){
+    salarioRec= salario-((faltas*8)*h);
+  }
+  
+  double getDesconto(){
+    return salarioRec;
+  }
+}
+
+void main() {
+   var c1 = CalcSalarioRec();
+   c1.setSalario(1000);
+   print('Salario:${c1.getSalario()}');
+   c1.setFaltas(2);
+   print('Faltas:${c1.getFaltas()}');
+   c1.valorH();
+   c1.desconto();  
+   
+   print('Valor descontado:R\$${ (c1.salario -c1.getDesconto()).toStringAsFixed(2)}');  
+   
+  
+   print('Salario final:R\$${c1.getDesconto().toStringAsFixed(2)}');
+  
+  
+  
+}

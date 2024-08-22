@@ -1,0 +1,72 @@
+class CalcIMC{
+  late double alt, peso,imc;
+  
+  void setAlt(double v){
+    alt = v;
+  }
+  double getAlt(){
+    return alt;  
+  }
+  
+  void setPeso(double v){
+    peso = v;
+  }
+  double getPeso(){
+    return peso;  
+  }
+  
+  void calcImc(){
+    imc= peso/(alt*alt);
+    
+  
+  }
+  double getcalcImc(){
+    return imc;
+  }
+  
+ 
+  
+}
+
+
+/*  
+    if (r <= 16.9) setResultado('Muito abaixo do pêso.');
+    else if (r > 16.9 && r <= 18.4) setResultado('Abaixo do pêso');
+    else if (r > 18.4 && r <= 24.9) setResultado('Pêso normal');
+    else if (r > 24.9 && r <= 29.9) setResultado('Acima do pêso');
+    else if (r > 29.9 && r <= 34.9) setResultado('Obesidade grau I');
+    else if (r > 34.9 && r <= 40) setResultado('Obesidade grau II');
+    else if (r > 40) setResultado('Obesidade grau III'); 
+  }
+  */
+void main(){
+  
+  // Objeto 1
+  
+  var pessoa1 = CalcIMC();
+  print('Calculo de IMC(Indice de massa corporal)');
+  print(' ');
+  print('Pessoa 1');
+  pessoa1.setAlt(1.92);
+  print('Altura:${pessoa1.getAlt()}');
+  pessoa1.setPeso(120);
+  print('Peso:${pessoa1.getPeso()}');
+  print(' ');
+  pessoa1.calcImc();
+  print('IMC:${pessoa1.getcalcImc().toStringAsFixed(2)}');  
+  if (pessoa1.getcalcImc()<=16.9){
+    print('Abaixo do pêso');
+  } else if(pessoa1.getcalcImc()>18.4 && pessoa1.getcalcImc()<=24.9){
+    print('Pêso normal');  
+  } else if(pessoa1.getcalcImc()>24.9 && pessoa1.getcalcImc()<=29.9){
+    print('Acima do Pêso');  
+  } else if(pessoa1.getcalcImc()>29.9 && pessoa1.getcalcImc()<=34.9){
+    print('Obesidade grau I');  
+  } else if(pessoa1.getcalcImc()>34.9 && pessoa1.getcalcImc()<=40){
+    print('Obesidade grau II');  
+  } else if(pessoa1.getcalcImc()>40){
+    print('Obesidade grau III');  
+  }
+  
+ 
+}

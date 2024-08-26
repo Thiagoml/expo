@@ -1,0 +1,119 @@
+class CalcMateria{
+  late double altM, compM,altA, compA, altB, compB, areaM, aPecaA, quantA,
+    sobra;
+  
+  void setAltM(double v){
+    altM = v;
+  }
+  double getAltM(){
+    return altM;  
+  }
+  
+  void setCompM(double v){
+    compM = v;
+  }
+  double getCompM(){
+    return compM;  
+  }
+  
+  void setAltA(double v){
+    altA = v;
+  }
+  double getAltA(){
+    return altA;  
+  }
+  
+  void setCompA(double v){
+    compA = v;
+  }
+  double getCompA(){
+    return compA;  
+  }
+
+  void setAltB(double v){
+    altB = v;
+  }
+  double getAltB(){
+    return altB;  
+  }
+  
+  void setCompB(double v){
+    compB = v;
+  }
+  double getCompB(){
+    return compB;  
+  }
+  
+  // calculo area
+  void calcAreaM(){
+    areaM= altM * compM;
+  }
+  double getcalcAreaM(){
+    return areaM;
+  }
+  
+  void calcAPecaA(){
+    aPecaA= altA * compB;
+  }
+  double getcalcAPecaA(){
+    return aPecaA;
+  }
+  
+  void calcQuantA(){
+    quantA= aPecaA / areaM;
+  }
+  double getcalcQuantA(){
+    return quantA;
+  }
+ // 
+  
+ // calculo sobra
+  
+  void calcSobra(){
+    sobra= (altB * compB) / (aPecaA % areaM);
+  }
+  
+  double getcalcSobra(){
+    return quantA;
+  }
+  
+}
+
+
+
+void main(){
+  
+  // Objeto 1
+  
+  var calculo1 = CalcMateria();
+  calculo1.setAltM(50);
+  print('Altura da materia prima: ${calculo1.getAltM()}');
+  
+  calculo1.setCompM(50);
+  print('Comprimento da materia prima: ${calculo1.getCompM()}');
+  
+  calculo1.setAltA(20);
+  print('Altura da primeira peça de corte: ${calculo1.getAltA()}');
+  
+  calculo1.setCompA(20);
+  print('Comprimento da primeira peça de corte: ${calculo1.getCompA()}');
+  
+  calculo1.setAltB(5);
+  print('Altura da primeira peça de corte: ${calculo1.getAltB()}');
+  
+  calculo1.setCompB(5);
+  print('Comprimento da primeira peça de corte: ${calculo1.getCompB()}');
+  
+  calculo1.calcAreaM();
+  calculo1.calcAPecaA();
+  calculo1.calcQuantA();
+  print('Quantidades de peças: ${calculo1.getcalcQuantA()}');
+  
+  calculo1.calcSobra();
+  print('Quantidades de pecas(segunda peça de corte): ${calculo1.getcalcSobra()}');
+  
+  
+  
+
+ 
+}

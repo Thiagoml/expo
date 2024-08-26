@@ -60,7 +60,7 @@ class CalcMateria{
   }
   
   void calcQuantA(){
-    quantA= aPecaA / areaM;
+    quantA=   areaM / aPecaA;
   }
   double getcalcQuantA(){
     return quantA;
@@ -70,11 +70,11 @@ class CalcMateria{
  // calculo sobra
   
   void calcSobra(){
-    sobra= (altB * compB) / (aPecaA % areaM);
+    sobra= (altB * compB) - (areaM % aPecaA );
   }
   
   double getcalcSobra(){
-    return quantA;
+    return sobra;
   }
   
 }
@@ -86,31 +86,31 @@ void main(){
   // Objeto 1
   
   var calculo1 = CalcMateria();
-  calculo1.setAltM(50);
+  calculo1.setAltM(6);
   print('Altura da materia prima: ${calculo1.getAltM()}');
   
-  calculo1.setCompM(50);
+  calculo1.setCompM(5);
   print('Comprimento da materia prima: ${calculo1.getCompM()}');
   
-  calculo1.setAltA(20);
+  calculo1.setAltA(3);
   print('Altura da primeira peça de corte: ${calculo1.getAltA()}');
   
-  calculo1.setCompA(20);
+  calculo1.setCompA(3);
   print('Comprimento da primeira peça de corte: ${calculo1.getCompA()}');
   
-  calculo1.setAltB(5);
-  print('Altura da primeira peça de corte: ${calculo1.getAltB()}');
+  calculo1.setAltB(2);
+  print('Altura da segunda peça de corte: ${calculo1.getAltB()}');
   
-  calculo1.setCompB(5);
-  print('Comprimento da primeira peça de corte: ${calculo1.getCompB()}');
+  calculo1.setCompB(2);
+  print('Comprimento da segunda peça de corte: ${calculo1.getCompB()}');
   
   calculo1.calcAreaM();
   calculo1.calcAPecaA();
   calculo1.calcQuantA();
-  print('Quantidades de peças: ${calculo1.getcalcQuantA()}');
+  print('Quantidades de peças: ${calculo1.getcalcQuantA().toInt()}');
   
   calculo1.calcSobra();
-  print('Quantidades de pecas(segunda peça de corte): ${calculo1.getcalcSobra()}');
+  print('Quantidades de pecas(segunda peça de corte): ${calculo1.getcalcSobra().toInt()}');
   
   
   

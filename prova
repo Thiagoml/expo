@@ -1,0 +1,95 @@
+class CalcMensalidade{
+  late double vlP, dP, bolsa, desconto, vldesconto, multa, acrescimo,
+  calcB;
+  
+  void setVlP(double v){
+    vlP = v;
+  }
+  double getVlP(){
+    return vlP;  
+  }
+  
+  void setDP(double v){
+    dP = v;
+  }
+  double getDP(){
+    return dP;  
+  }
+  
+ void setBolsa(double v){
+    bolsa = v;
+  }
+  double getBolsa(){
+    return bolsa;  
+  }
+   
+  void setDesconto(double v){
+    desconto = v;
+  }
+  double getDesconto(){
+    return desconto;  
+  }
+
+  void setCalcDesconto(){
+    vldesconto = vlP * desconto;
+  }
+  
+  double getCalcDesconto(){
+    return vldesconto;
+  }
+  
+  void setCalcMulta(){
+    multa = vlP + (vlP * 0.02) + acrescimo;
+  }
+  
+  double getCalcMulta(){
+    return multa;
+  }
+  
+  void setCAcrescimo(){
+    acrescimo = (dP - 10)*0.33;
+  }
+  
+  double getCAcrescimo(){
+    return acrescimo;
+  }
+  
+  void setCalcB(){
+    calcB = vlP * dP;
+  }
+  
+  double getCalcB(){
+    return calcB;
+  }
+  
+}
+
+
+void main() {
+  var aluno = CalcMensalidade();
+  aluno.setVlP(100);
+  aluno.setDP(12);
+  aluno.setBolsa(50);
+  aluno.setCalcB();
+  
+  if (aluno.getDP()==10){
+    aluno.setDesconto(0);
+  } else if(aluno.getDP()>=1 && aluno.getDP()<=5){
+    aluno.setDesconto(0.10);  
+  } else if(aluno.getDP()>=6 && aluno.getDP()<=9){
+    aluno.setDesconto(0.05);  
+  } else if(aluno.getDP()>10){
+    aluno.setCAcrescimo();
+    aluno.setCalcMulta();
+  }
+  
+  aluno.setCalcDesconto();
+  
+  if (aluno.getBolsa()==0.05){
+    print('Valor à pagar: ${aluno.getCalcB()}');
+  } else if (aluno.getBolsa()==1){
+    print('Não é necessario efetuar pagamento');
+  }
+   
+  
+}

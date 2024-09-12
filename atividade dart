@@ -1,89 +1,6 @@
-// Definição da classe Aluno
 
 class Livro {
-
-  // Atributos da classe
-
-  String titulo;
-  String autor;
-  String genero;
-  String editora;
-  double precoVenda;
-  double custo_fabricacao;
-  int copias_vendiadas;
-  
-  
-  
-  
-
-  // Construtor da classe
-
-  Livro (this.titulo, this.autor, this.genero, this.editora, this.precoVenda, this.custo_fabricacao, this.copias_vendiadas, );
-
-
-  // Método para exibir informações do aluno
-
-  void exibirInformacoes() {
-
-    print("Titulo: $titulo");
-    print("Autor: $autor");
-    print("Genero: $genero");    
-    print("Editora: $editora");
-    print("Preço de venda: $precoVenda");
-    print("Copias vendidas: $copias_vendidads") 
-  }
-
-
-  // Método para calcular a média das notas
-
-  double calcularLucro() {
-
-    return (precoVenda - custo_fabricacao)* copias_vendidas
-
-  }
-
-
-  // Método para exibir a média formatada
-
-  void exibirMediaFormatada() {
-
-    print("Média das notas: ${calcularMedia().toStringAsFixed(2)}");
-
-  }
-
-}
-
-
-void main() {
-
-  // Criando objetos da classe Aluno
-
-  Livro aluno1 = Livro("", 20, 7.456, 8.019, 6.589);
-
-  Livro aluno2 = Livro("Maria", 22, 9.123, 8.456, 7.789);
-
-
-  // Usando métodos dos objetos
-
-  aluno1.exibirInformacoes();
-
-  aluno1.exibirMediaFormatada();
-
-  print("");
-
-
-  aluno2.exibirInformacoes();
-
-  aluno2.exibirMediaFormatada();
-
-}
-
-
-
-------------------------------------------------------------------------------------------------------------------------------------------
-
-
-class Livro {
+  //Atributos da classe
   String autor;
   String titulo;
   String editora;
@@ -92,11 +9,15 @@ class Livro {
   double lucro;
   int ano;
   int edicao;
-
-
-Livro(this.autor, this.titulo, this.editora, this.precoCusto, this.precoVenda, this.lucro, this.ano, this.edicao);
-
-  void imprimirInfo(){
+  // -----
+  
+  //construtor
+  Livro(this.autor, this.titulo, this.editora, this.precoCusto, this.precoVenda,
+      this.lucro, this.ano, this.edicao);
+  // -----
+  
+  //metodo para imprimir as informações de uma vez
+  void imprimirInfo() {
     print("autor: $autor");
     print("titulo: $titulo");
     print("editora: $editora");
@@ -105,31 +26,35 @@ Livro(this.autor, this.titulo, this.editora, this.precoCusto, this.precoVenda, t
     print("lucro: ${lucro.toStringAsFixed(0)}%");
     print("ano: $ano");
     print("edicão: $edicao");
-  } 
-  
-  void imprimirAutorTitulo(){
+  }
+  // -----
+
+  //metodo em que imprimi o autor e o titulo do livro
+  void imprimirAutorTitulo() {
     print("autor: $autor");
     print("titulo: $titulo");
   }
+  // -----
   
-  void calcularPrecoVenda(double lucro){
-    this.lucro=lucro;
-    precoVenda = precoCusto + precoCusto*(lucro/100);
+  //metodo para calcular o lucro obtido com o livro
+  void calcularPrecoVenda(double lucro) {
+    this.lucro = lucro;
+    precoVenda = precoCusto + precoCusto * (lucro / 100);
   }
+
+  double imprimirPrecoVenda() {
+    return (precoVenda);
+  }
+  // -----
   
-  double imprimirPrecoVenda(){
-   return (precoVenda); 
-  }
 }
 
 void main() {
-  Livro livro1 = Livro("Int. Flutter","Maria","TI",50,75,50,2023,2);
-  livro1.imprimirInfo();
+  Livro livro1 = Livro("Maria","Int. Flutter", "TI", 50, 75, 50, 2023, 2); // criação do objeto
+  livro1.imprimirInfo(); // imprimir informações
   print("--------------");
-  livro1.imprimirAutorTitulo();
+  livro1.imprimirAutorTitulo(); // imprimir autor e titulo
   print("--------------");
-  livro1.calcularPrecoVenda(75);
-  print (livro1.imprimirPrecoVenda());
+  livro1.calcularPrecoVenda(75); // executar o metodo que calcula o lucro
+  print(livro1.imprimirPrecoVenda()); // imprimi o lucr
 }
-
-

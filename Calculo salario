@@ -1,17 +1,16 @@
 class CalcSalarioRec{ 
+  //atributos
   late double salario,faltas,h, salarioRec; 
+  // 
   
+  // set e getters
   void setSalario(double v){
     salario = v;
   }
   double getSalario(){
     return salario;  
   }
-  
-  void valorH(){
-    h = salario/240;
-  }
-  
+
   double getH(){
     return h;
   }
@@ -23,7 +22,15 @@ class CalcSalarioRec{
   double getFaltas(){
     return faltas;  
   }
+  // ----
   
+  // metodo para calcular o valor recebido por hora 
+  void valorH(){
+    h = salario/240;
+  }
+  // ----
+  
+  // metodo para calcular o desconto por falta
   void desconto(){
     salarioRec= salario-((faltas*8)*h);
   }
@@ -31,21 +38,22 @@ class CalcSalarioRec{
   double getDesconto(){
     return salarioRec;
   }
+  // ----
 }
 
 void main() {
-   var c1 = CalcSalarioRec();
-   c1.setSalario(1000);
-   print('Salario:${c1.getSalario()}');
-   c1.setFaltas(2);
-   print('Faltas:${c1.getFaltas()}');
-   c1.valorH();
-   c1.desconto();  
+   var c1 = CalcSalarioRec(); // criação do objeto
+   c1.setSalario(1000); // set salario
+   print('Salario:${c1.getSalario()}'); // print salario
+   c1.setFaltas(2); // set faltas
+   print('Faltas:${c1.getFaltas()}'); // print faltas
+   c1.valorH(); // execução do metodo valor/h
+   c1.desconto();  // execução do metodo desconto por falta
    
-   print('Valor descontado:R\$${ (c1.salario -c1.getDesconto()).toStringAsFixed(2)}');  
+   print('Valor descontado:R\$${ (c1.salario -c1.getDesconto()).toStringAsFixed(2)}'); // print valor descontado 
    
   
-   print('Salario final:R\$${c1.getDesconto().toStringAsFixed(2)}');
+   print('Salario final:R\$${c1.getDesconto().toStringAsFixed(2)}'); // print salario final
   
   
   
